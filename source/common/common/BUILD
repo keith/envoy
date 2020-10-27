@@ -7,6 +7,7 @@ load(
     "envoy_cc_win32_library",
     "envoy_include_prefix",
     "envoy_package",
+    "envoy_pch_library",
 )
 
 licenses(["notice"])  # Apache 2
@@ -413,4 +414,17 @@ envoy_cc_library(
     deps = [
         "@com_google_absl//absl/status:statusor",
     ],
+)
+
+envoy_pch_library(
+    name = "common_pch",
+    external_deps = [
+        "spdlog",
+    ],
+    includes = [
+        "spdlog/sinks/android_sink.h",
+        "spdlog/spdlog.h",
+    ],
+    visibility = ["//visibility:public"],
+    deps = [],
 )

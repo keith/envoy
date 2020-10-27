@@ -13,6 +13,7 @@ load(
     _envoy_include_prefix = "envoy_include_prefix",
     _envoy_proto_library = "envoy_proto_library",
 )
+load(":envoy_pch.bzl", _envoy_pch_library = "envoy_pch_library")
 load(
     ":envoy_select.bzl",
     _envoy_select_boringssl = "envoy_select_boringssl",
@@ -206,6 +207,7 @@ envoy_cc_posix_library = _envoy_cc_posix_library
 envoy_cc_win32_library = _envoy_cc_win32_library
 envoy_include_prefix = _envoy_include_prefix
 envoy_proto_library = _envoy_proto_library
+envoy_pch_library = _envoy_pch_library
 
 # Test wrappers (from envoy_test.bzl)
 envoy_cc_fuzz_test = _envoy_cc_fuzz_test
